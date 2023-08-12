@@ -59,88 +59,88 @@ M.base_16 = {
 
 M.polish_hl = {
     -- base46/integrations/syntax.lua
-    Boolean = { fg = M.base_30.blue },                         -- true, false
-    -- Character = { fg = M.base_16.base0B },
-    Conditional = { fg = M.base_16.base0E },                -- if, if else, else
-     -- Constant = { fg = M.base_30.red },                          -- 
-    Define = { fg = "#959595" },                          -- #define
-     -- Delimiter = { fg = M.base_30.red },
-     -- Float = {fg = M.base_30.red },
-     -- Variable = { fg = M.base_30.red },                      -- class variable names
-    Function = { fg = M.base_16.base0D },
-    Identifier = { fg = M.base_30.cyan },                      -- CMAKE_XXXXXX_XXXXXX 
-    Include = { link = "Define" },                         -- #include
-    Keyword = { fg = M.base_30.blue },                      -- 
-     -- Label = { fg = M.base_30.red },                         -- ?
-    -- Number = {},                                         -- 1, 1.0, 1.0f
-     -- Operator = { link = "Keyword" },                        -- operator keyword
-    PreProc = { link = "Define" },                           -- #ifdef, #else, #endif
-    Repeat = { link = "Conditional" },                      -- while, for, and other loops
-    -- Special = { fg = M.base_30.red },                       -- 
-    -- SpecialChar = { fg = M.base_30.red },                   -- '\n', '\0'
-    Statement = { fg = M.base_30.red },                    -- return, this, public, private
+    Boolean = { fg = M.base_30.blue },                      -- [ true | false ]
+    -- Character = { fg = M.base_16.base0B },               ??
+    Conditional = { fg = M.base_16.base0E },                -- [ if | if else | else | condition ? true : false ]
+    -- Constant = { fg = M.base_30.red },                   ??
+    Define = { fg = "#959595" },                            -- #define
+    -- Delimiter = { fg = M.base_30.red },                  ??
+    -- Float = {fg = M.base_30.red },                       ??
+    -- Variable = { fg = M.base_30.red },                   ??
+    Function = { fg = M.base_16.base0D },                   -- Function name colors
+    Identifier = { fg = M.base_30.cyan },                   -- CMAKE_XXXXXX_XXXXXX 
+    Include = { link = "Define" },                          -- #include
+    -- Keyword = { fg = M.base_30.blue },                   ??
+    -- Label = { fg = M.base_30.red }                       ??
+    -- Number = { fg = M.base_30.red},                      -- 1, 1.0, 1.0f
+    -- Operator = { link = "Keyword" },                     ??  
+    PreProc = { link = "Define" },                          -- [ #ifdef | #else | #endif ]
+    Repeat = { link = "Conditional" },                      -- [ while | for]
+    -- Special = { fg = M.base_30.red },                    ??
+    -- SpecialChar = { fg = M.base_30.red },                -- [ \n | \0 | \e ] and more
+    -- Statement = { fg = M.base_30.red },                  ??
     StorageClass = { fg = M.base_30.blue },                 -- static
-    String = { fg = M.base_30.red },                     -- <header>
-    Structure = { fg = M.base_30.red },                       -- 
-     Tag = { fg = M.base_30.red },                           -- ?
+    -- String = { fg = M.base_30.red },                     ??
+    -- Structure = { fg = M.base_30.red },                  ?? 
+    -- Tag = { fg = M.base_30.red },                        ??
     Todo = { fg = M.base_30.red },                          -- TODO in comments
-    Type = { fg = M.base_30.blue },                            -- [struct|class|enum|typedef] name 
-     -- Typedef = { fg = M.base_30.blue },                                       --
+    Type = { fg = M.base_30.blue },                         -- [ struct | class | enum | typedef ] name, const
+    -- Typedef = { fg = M.base_30.blue },                   ??
 
     -- base46/integrations/treesitter.lua
-    -- ["@annotation"] = { fg = M.base_30.red },
-     ["@attribute"] = { fg = M.base_30.red },
-    -- ["@character"] = { fg = M.base_16.red },
-    ["@constructor"] = { link = "Function"},                        -- method definition color
-    ["@constant"] = { fg = "#9E9EFF" },                         -- #define NAME
-    ["@constant.builtin"] = { link = "@constant"},             -- NULL
-    ["@constant.macro"] = { link = "@constant" },
-    -- ["@error"] = { fg = M.base_30.red },
-    -- ["@exception"] = { fg = M.base_30.red },
-    -- ["@float"] = { fg = M.base_30.red },
-    ["@keyword"] = { fg = M.base_30.blue },                     -- [ struct | class | enum | typedef | friend ]
-    ["@keyword.function"] = { fg = M.base_30.blue },
-    -- ["@keyword.return"] = { fg = M.base_30.red },            -- [ return ]
-    -- ["@function"] = { link = "Function" },
-    -- ["@function.builtin"] = { link = "Function" },
-    -- ["@function.macro"] = { fg = M.base_30.red },
-    -- ["@function.call"] = { fg = M.base_30.red },
-    ["@operator"] = { fg = M.base_30.red },                  -- + - / * << >> ...
-    ["@keyword.operator"] = { fg = M.base_30.blue },            -- [ new | delete ]
-    -- ["@method"] = { link = "Function" },
-    -- ["@method.call"] = { link = "Function" },
-    ["@namespace"] = { fg = M.base_30.green },                  -- std
-     -- ["@none"] = { fg = M.base_30.red },
-    ["@parameter"] = { link = "Define" },                       -- function parameter variables
-     -- ["@reference"] = { fg = M.base_30.red },
-    ["@punctuation.bracket"] = { link = "Define" },        -- [ () | {} | [] ]
-    ["@punctuation.delimiter"] = { fg = M.base_30.red },        -- [ ; | , | : ]
-    ["@punctuation.special"] = {fg = M.base_30.white },
-    -- ["@string"] = {fg = M.base_30.red },                     -- ["string content"]
-     --["@string.regex"] = {fg = M.base_30.red },
-    --["@string.escape"] = {fg = M.base_30.red },                 -- [ \n | \e | \0 ]
-     -- ["@string.special"] = {fg = M.base_30.red },
-     -- ["@symbol"] = { fg = M.base_30.red },
-     -- ["@tag"] = { fg = M.base_30.red },                        -- 
-     -- ["@tag.attribute"] = { fg = M.base_30.red },
-     -- ["@tag.delimiter"] = { fg = M.base_30.red },
-    ["@text"] = { fg = M.base_30.red },
-    ["@text.strong"] = { fg = M.base_30.red },
-    ["@text.emphasis"] = { fg = M.base_30.red },                   -- 
-    ["@text.strike"] = { fg = M.base_30.red },                   -- 
-    ["@text.literal"] = { fg = M.base_30.red },                   -- 
-    ["@text.uri"] = { fg = M.base_30.red },                   -- 
-    ["@type.builtin"] = { fg = M.base_30.blue },              -- [ bool | char | short | int | long | float | double ] 
-    ["@variable"] = { fg = M.base_30.white },                    -- [ variables ]
-    ["@variable.builtin"] = { fg = M.base_30.blue },            -- [ this ]
-     -- ["@definition"] = { fg = M.base_30.red },
-     -- ["@scope"] = { fg = M.base_30.red },
-    ["@field"] = { fg = M.base_30.white },                      -- [ class variable ]
-    ["@field.key"] = { fg = M.base_30.red },
-    ["@property"] = { fg = M.base_30.white },                   -- [ variables inside class type pointer ]
-     -- ["@include"] = { fg = M.base_30.red },
-    ["@conditional"] = { fg = M.base_30.red },
-    ["@modifier"] = { fg = M.base_30.red },
+    -- ["@annotation"] = { fg = M.base_30.red },            ??
+    -- ["@attribute"] = { fg = M.base_30.red },             ??
+    -- ["@character"] = { fg = M.base_16.red },             ??
+    ["@constructor"] = { link = "Function"},                -- method definition color (Class::Method)
+    ["@constant"] = { fg = "#9E9EFF" },                     -- #define NAME
+    ["@constant.builtin"] = { link = "@constant"},          -- NULL
+    ["@constant.macro"] = { link = "@constant" },           -- Safety first, just making it the same color :)
+    -- ["@error"] = { fg = M.base_30.red },                 ??
+    -- ["@exception"] = { fg = M.base_30.red },             ??
+    -- ["@float"] = { fg = M.base_30.red },                 ??
+    ["@keyword"] = { fg = M.base_30.blue },                 -- [ struct | class | enum | typedef | friend ] keyword
+    ["@keyword.function"] = { fg = M.base_30.blue },        -- likely JavaScript function
+    -- ["@keyword.return"] = { fg = M.base_30.red },        -- return
+    -- ["@function"] = { link = "Function" },               -- function declaration
+    -- ["@function.builtin"] = { link = "Function" },       -- library function()
+    -- ["@function.macro"] = { fg = M.base_30.red },        ??
+    -- ["@function.call"] = { fg = M.base_30.red },         -- .function()
+    ["@operator"] = { fg = M.base_30.red },                 -- + - / * << >> and more
+    ["@keyword.operator"] = { fg = M.base_30.blue },        -- [ new | delete ] keyword
+    -- ["@method"] = { link = "Function" },                 ??
+    -- ["@method.call"] = { link = "Function" },            ??
+    ["@namespace"] = { fg = M.base_30.green },              -- namespace::
+    -- ["@none"] = { fg = M.base_30.red },                  ??
+    ["@parameter"] = { link = "Define" },                   -- function parameter names
+    -- ["@reference"] = { fg = M.base_30.red },             ??
+    ["@punctuation.bracket"] = { link = "Define" },         -- [ () | {} | [] ]
+    ["@punctuation.delimiter"] = { fg = M.base_30.red },    -- [ ; | , | : ]
+    -- ["@punctuation.special"] = {fg = M.base_30.white },  ??
+    -- ["@string"] = {fg = M.base_30.red },                 -- ["string content"]
+    --["@string.regex"] = {fg = M.base_30.red },            ??
+    --["@string.escape"] = {fg = M.base_30.red },           -- [ \n | \e | \0 ]
+    -- ["@string.special"] = {fg = M.base_30.red },         ??
+    -- ["@symbol"] = { fg = M.base_30.red },                ??
+    -- ["@tag"] = { fg = M.base_30.red },                   ?? 
+    -- ["@tag.attribute"] = { fg = M.base_30.red },         ??
+    -- ["@tag.delimiter"] = { fg = M.base_30.red },         ??
+    ["@text"] = { fg = M.base_30.red },                     -- Red to identify
+    ["@text.strong"] = { fg = M.base_30.red },              -- ^
+    ["@text.emphasis"] = { fg = M.base_30.red },            -- ^
+    ["@text.strike"] = { fg = M.base_30.red },              -- ^ 
+    ["@text.literal"] = { fg = M.base_30.red },             -- ^
+    ["@text.uri"] = { fg = M.base_30.red },                 -- ^
+    ["@type.builtin"] = { fg = M.base_30.blue },            -- [ bool | char | short | int | long | float | double ] types 
+    ["@variable"] = { fg = M.base_30.white },               -- variables
+    ["@variable.builtin"] = { fg = M.base_30.blue },        -- [ this ]
+    -- ["@definition"] = { fg = M.base_30.red },            ??
+    -- ["@scope"] = { fg = M.base_30.red },                 ??
+    ["@field"] = { fg = M.base_30.white },                  -- member variables
+    ["@field.key"] = { fg = M.base_30.red },                -- Red to identify
+    ["@property"] = { fg = M.base_30.white },               -- member pointers
+    -- ["@include"] = { fg = M.base_30.red },               ??
+    -- ["@conditional"] = { fg = M.base_30.red },           ??
+    ["@modifier"] = { fg = M.base_30.red },                 -- Waiting for it to be implemented: [ public | private ]
 }
 
 M.type = "dark"
