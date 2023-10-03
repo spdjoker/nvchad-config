@@ -3,6 +3,7 @@
 local configs = require("plugins.configs.lspconfig")
 local on_attach = configs.on_attach
 local capabilities = configs.capabilities
+capabilities.offsetEncoding = { "utf-16" }
 
 local utils = require "core.utils"
 local lspconfig = require "lspconfig"
@@ -29,5 +30,6 @@ lspconfig.clangd.setup {
     if not utils.load_config().ui.lsp_semantic_tokens and client.supports_method "textDocument/semanticTokens" then
       client.server_capabilities.semanticTokensProvider = nil
     end
-  end
+  end,
+  capabilities = capabilities,
 }
